@@ -12,6 +12,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Minhas Listas"), centerTitle: true),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        shape: CircleBorder(),
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
