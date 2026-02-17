@@ -22,6 +22,45 @@ class _ListDetailState extends State<ListDetail> {
           ),
         ],
       ),
+      body: Padding(
+        padding: .symmetric(horizontal: 16, vertical: 8),
+        child: Column(
+          crossAxisAlignment: .start,
+          children: [
+            TextField(
+              decoration: InputDecoration(
+                contentPadding: .symmetric(vertical: 4),
+                label: Text(
+                  "Mercado",
+                  style: TextStyle(fontSize: 24, fontWeight: .bold),
+                ),
+              ),
+            ),
+            Row(
+              children: [
+                Column(
+                  crossAxisAlignment: .start,
+                  children: [
+                    Text("Não marcados"),
+                    Text("R\$ 0,00", style: TextStyle(color: Colors.blue)),
+                  ],
+                ),
+                const SizedBox(width: 16),
+                Column(
+                  crossAxisAlignment: .start,
+                  children: [
+                    Text("Marcados"),
+                    Text(
+                      "R\$ 0,00",
+                      style: TextStyle(color: Colors.lightGreen),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
