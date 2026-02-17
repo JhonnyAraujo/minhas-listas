@@ -12,6 +12,49 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Minhas Listas"), centerTitle: true),
+      body: Padding(
+        padding: const .symmetric(horizontal: 16, vertical: 8),
+        child: ListView(
+          children: [
+            Card(
+              elevation: 1,
+              shape: RoundedRectangleBorder(borderRadius: .circular(5)),
+              child: ListTile(
+                contentPadding: .symmetric(horizontal: 8, vertical: 4),
+                title: Row(
+                  mainAxisAlignment: .spaceBetween,
+                  children: [
+                    Text("Mercado"),
+                    Text("0/0", style: TextStyle(color: Colors.lightGreen)),
+                  ],
+                ),
+                subtitle: Padding(
+                  padding: const .only(top: 16),
+                  child: LinearProgressIndicator(value: 0.0),
+                ),
+              ),
+            ),
+            Card(
+              elevation: 1,
+              shape: RoundedRectangleBorder(borderRadius: .circular(5)),
+              child: ListTile(
+                contentPadding: .symmetric(horizontal: 8, vertical: 4),
+                title: Row(
+                  mainAxisAlignment: .spaceBetween,
+                  children: [
+                    Text("Trabalho"),
+                    Text("0/0", style: TextStyle(color: Colors.lightGreen)),
+                  ],
+                ),
+                subtitle: Padding(
+                  padding: const .only(top: 16),
+                  child: LinearProgressIndicator(value: 0.0),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         shape: CircleBorder(),
