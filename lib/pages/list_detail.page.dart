@@ -61,6 +61,11 @@ class _ListDetailState extends State<ListDetail> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {},
+        shape: const StadiumBorder(),
+        label: Text("Adicionar"),
+      ),
     );
   }
 }
