@@ -24,8 +24,7 @@ class _ListDetailState extends State<ListDetail> {
       ),
       body: Padding(
         padding: .symmetric(horizontal: 16, vertical: 8),
-        child: Column(
-          crossAxisAlignment: .start,
+        child: ListView(
           children: [
             TextField(
               decoration: InputDecoration(
@@ -36,6 +35,61 @@ class _ListDetailState extends State<ListDetail> {
                 ),
               ),
             ),
+            Row(
+              children: [
+                Transform.scale(
+                  scale: 1.5,
+                  child: Checkbox(
+                    value: true,
+                    shape: const CircleBorder(),
+                    side: BorderSide(color: Colors.blue, width: 2),
+                    activeColor: Colors.lightGreen,
+                    onChanged: (value) {},
+                  ),
+                ),
+                const SizedBox(width: 8),
+                const Text("Arroz", style: TextStyle(fontSize: 18)),
+                const Spacer(),
+                const Text("R\$ 2.99", style: TextStyle(fontSize: 18)),
+              ],
+            ),
+            Row(
+              children: [
+                Transform.scale(
+                  scale: 1.5,
+                  child: Checkbox(
+                    value: true,
+                    shape: const CircleBorder(),
+                    side: BorderSide(color: Colors.blue, width: 2),
+                    activeColor: Colors.lightGreen,
+                    onChanged: (value) {},
+                  ),
+                ),
+                const SizedBox(width: 8),
+                const Text("Feijão", style: TextStyle(fontSize: 18)),
+                const Spacer(),
+                const Text("R\$ 5.99", style: TextStyle(fontSize: 18)),
+              ],
+            ),
+            Row(
+              children: [
+                Transform.scale(
+                  scale: 1.5,
+                  child: Checkbox(
+                    value: false,
+                    shape: const CircleBorder(),
+                    side: BorderSide(color: Colors.blue, width: 2),
+                    activeColor: Colors.lightGreen,
+                    onChanged: (value) {},
+                  ),
+                ),
+                const SizedBox(width: 8),
+                const Text("Massa", style: TextStyle(fontSize: 18)),
+                const Spacer(),
+                const Text("R\$ 1.99", style: TextStyle(fontSize: 18)),
+              ],
+            ),
+            SizedBox(height: 24),
             Row(
               children: [
                 Column(
