@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:minhas_listas/pages/add_list.page.dart';
-import 'package:minhas_listas/pages/add_product.page.dart';
 import 'package:minhas_listas/pages/home.page.dart';
-import 'package:minhas_listas/pages/list_detail.page.dart';
 
 void main() {
   runApp(const MyApp());

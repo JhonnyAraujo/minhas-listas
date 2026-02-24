@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:minhas_listas/pages/add_list.page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -56,7 +57,12 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const AddList()),
+          );
+        },
         shape: CircleBorder(),
         child: const Icon(Icons.add),
       ),

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:minhas_listas/models/shopping_list.model.dart';
 
 class ListDetail extends StatefulWidget {
-  const ListDetail({super.key});
+  ShoppingList lista;
+
+  ListDetail({super.key, required this.lista});
 
   @override
   State<ListDetail> createState() => _ListDetailState();

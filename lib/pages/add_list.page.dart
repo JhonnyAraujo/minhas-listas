@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:minhas_listas/models/shopping_list.model.dart';
+import 'package:minhas_listas/pages/list_detail.page.dart';
 
 class AddList extends StatefulWidget {
   const AddList({super.key});
@@ -8,6 +10,21 @@ class AddList extends StatefulWidget {
 }
 
 class _AddListState extends State<AddList> {
+  final TextEditingController titleController = TextEditingController();
+
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  addList() {
+    if (!formKey.currentState!.validate()) return;
+
+    final ShoppingList lista = ShoppingList(title: titleController.text);
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ListDetail(lista: lista)),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,19 +35,27 @@ class _AddListState extends State<AddList> {
           child: Column(
             children: [
               Spacer(),
-              TextField(
+              TextFormField(
+                controller: titleController,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   label: Text("Nome da lista"),
                   filled: true,
                 ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Campo Obrigatorio!";
+                  }
+                },
               ),
               Spacer(),
               Row(
                 children: [
                   Expanded(
                     child: OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context, AddList());
+                      },
                       style: OutlinedButton.styleFrom(
                         side: const BorderSide(color: Colors.white),
                       ),
@@ -43,7 +68,7 @@ class _AddListState extends State<AddList> {
                   const SizedBox(width: 16),
                   Expanded(
                     child: FilledButton(
-                      onPressed: () {},
+                      onPressed: addList,
                       style: FilledButton.styleFrom(
                         backgroundColor: Colors.white,
                       ),
